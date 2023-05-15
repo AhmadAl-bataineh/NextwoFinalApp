@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Instructor> 
+<!-- Our Agent Section-->
+<section id="aa-agents">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-agents-area">
+                    <div class="aa-title">
+                        <h2>Our Instructors</h2>
+                        <span></span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>
+                    </div>
+                    <!-- agents content -->
+                    <div class="aa-agents-content">
+                        <ul class="aa-agents-slider">
+                            @foreach(var item in Model){
+                            <li>
+                                <div class="aa-single-agents">
+                                    <div class="aa-agents-img">
+                                            <img src="@Url.Content(item.InstructorImg)" alt="agent member image">
+                                    </div>
+                                    <div class="aa-agetns-info">
+                                        <h4><a asp-action="" asp-controller="" asp-route-id="@item.InstructorId">@item.InstructorName</a></h4>
+                                        <span>@item.Position</span>
+                                        <div class="aa-agent-social">
+                                            <a href=@item.FB><i class="fa fa-facebook"></i></a>
+                                            <a href="@item.Tw"><i class="fa fa-twitter"></i></a>
+                                            <a href="@item.LinkedIn"><i class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Our Agent Section-->

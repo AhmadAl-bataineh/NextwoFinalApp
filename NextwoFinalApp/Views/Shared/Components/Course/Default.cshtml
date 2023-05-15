@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Course>
+<!-- Latest property -->
+<section id="aa-latest-property">
+    <div class="container">
+        <div class="aa-latest-property-area">
+            <div class="aa-title">
+                <h2>Latest Course</h2>
+                <span></span>
+                <p>Select Your Course</p>
+            </div>
+            <div class="aa-latest-properties-content">
+                <div class="row">
+                    @foreach (var item in Model){
+                    <div class="col-md-4">
+                        <article class="aa-properties-item">
+                            <a href="#" class="aa-properties-item-img">
+                                <img src="~/img/item/1.jpg" alt="img">
+                            </a>
+                            <div class="aa-tag for-sale">
+                                @item.venu
+                            </div>
+                            <div class="aa-properties-item-content">
+                                <div class="aa-properties-info">
+                                        <span>@Html.DisplayNameFor(x=> x.StartDate)</span>
+                                    <span>@item.StartDate.ToShortDateString()</span>
+                                        <span>@Html.DisplayNameFor(x=> x.Hours)</span>
+                                    <span>@item.Hours</span>
+                                </div>
+                                <div class="aa-properties-about">
+                                    <h3><a href="#">@item.CourseTitle</a></h3>
+                                    <p>@item.CourseDesc!.Substring(1,1) ...</p>
+                                </div>
+                                <div class="aa-properties-detial">
+                                    <span class="aa-price">
+                                        @item.Price Jod
+                                    </span>
+                                    <a asp-action="" asp-controller="" asp-route-id="" class="aa-secondary-btn">View Details</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Latest property -->
